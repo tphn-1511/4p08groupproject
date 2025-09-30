@@ -2,12 +2,12 @@ library(readxl)
 data <- read_xlsx("2_data/group11_brockcounsel_dataset.xlsx")
 library(tidyverse)
 
-# Composite for social-anxiety for year 1
+#Composite for social-anxiety for year 1
 library(tidyverse)
 data <- data %>% 
   mutate(social_anxiety_comp_yr1 = rowMeans(data.frame(PARTT_1a_self_quiet.1.00, PARTT_1b_self_talk.1.00, PARTT_1c_self_gossip.1.00, PARTT_1d_self_worry.1.00, PARTT_1e_self_makefun.1.00, PARTT_1f_self_afraid.1.00, PARTT_1g_self_argument.1.00, PARTT_1h_self_teased.1.00, PARTT_1i_self_shy.1.00, PARTT_1j_self_nervous.1.00, PARTT_1k_self_new.1.00, PARTT_1l_self_shyfriends.1.00, PARTT_1m_self_hang.1.00, PARTT_1n_self_invite.1.00)))
 
-# Composite for social-anxiety for year 4
+#Composite for social-anxiety for year 4
 library(tidyverse)
 data <- data %>% 
   mutate(social_anxiety_comp_yr4 = rowMeans(data.frame(PARTT_1a_self_quiet.4.00, PARTT_1b_self_talk.4.00, PARTT_1c_self_gossip.4.00,PARTT_1d_self_worry.4.00, PARTT_1e_self_makefun.4.00, PARTT_1f_self_afraid.4.00, PARTT_1g_self_argument.4.00, PARTT_1h_self_teased.4.00, PARTT_1i_self_shy.4.00, PARTT_1j_self_nervous.4.00, PARTT_1k_self_new.4.00, PARTT_1l_self_shyfriends.4.00, PARTT_1m_self_hang.4.00, PARTT_1n_self_invite.4.00)))

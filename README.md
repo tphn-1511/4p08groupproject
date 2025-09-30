@@ -2,5 +2,7 @@
 
 A group project in Brock University investigating about social anxiety in university students. The data is provided by Brock Health Youth Project.
 
+![Social Anxiety in University Students](image-url)
+
 
 

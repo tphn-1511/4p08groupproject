@@ -1,0 +1,157 @@
+library(readxl)
+data <- read_xlsx("2_data/group11_brockcounsel_dataset.xlsx")
+library(tidyverse)
+
+# Composite for social-anxiety for year 1
+library(tidyverse)
+data <- data %>% 
+  mutate(social_anxiety_comp_yr1 = rowMeans(data.frame(PARTT_1a_self_quiet.1.00, PARTT_1b_self_talk.1.00, PARTT_1c_self_gossip.1.00, PARTT_1d_self_worry.1.00, PARTT_1e_self_makefun.1.00, PARTT_1f_self_afraid.1.00, PARTT_1g_self_argument.1.00, PARTT_1h_self_teased.1.00, PARTT_1i_self_shy.1.00, PARTT_1j_self_nervous.1.00, PARTT_1k_self_new.1.00, PARTT_1l_self_shyfriends.1.00, PARTT_1m_self_hang.1.00, PARTT_1n_self_invite.1.00)))
+
+# Composite for social-anxiety for year 4
+library(tidyverse)
+data <- data %>% 
+  mutate(social_anxiety_comp_yr4 = rowMeans(data.frame(PARTT_1a_self_quiet.4.00, PARTT_1b_self_talk.4.00, PARTT_1c_self_gossip.4.00,PARTT_1d_self_worry.4.00, PARTT_1e_self_makefun.4.00, PARTT_1f_self_afraid.4.00, PARTT_1g_self_argument.4.00, PARTT_1h_self_teased.4.00, PARTT_1i_self_shy.4.00, PARTT_1j_self_nervous.4.00, PARTT_1k_self_new.4.00, PARTT_1l_self_shyfriends.4.00, PARTT_1m_self_hang.4.00, PARTT_1n_self_invite.4.00)))
+
+#Self-esteem, year 1
+data <- data %>% 
+  mutate(esteem_comp_yr1 = rowMeans(data.frame(PARTS_1a_esteem_satisfied.1.00,PARTS_1b_esteem_qualities.1.00,PARTS_1c_esteem_able.1.00,PARTS_1f_esteem_worth.1.00,PARTS_1j_esteem_positive.1.00)))
+
+#Self-esteem, year 4
+data <- data %>% 
+  mutate(esteem_comp_yr4 = rowMeans(data.frame(PARTS_1a_esteem_satisfied.4.00,PARTS_1b_esteem_qualities.4.00,PARTS_1c_esteem_able.4.00,PARTS_1f_esteem_worth.4.00,PARTS_1j_esteem_positive.4.00)))
+
+#Composite for friendship quality year 1
+data <- data %>% 
+  mutate(friendship_quality_comp_yr1=rowMeans(data.frame(PARTO_1a_friend_pov.1.00,PARTO_1b_friend_upset.1.00,PARTO_1c_friend_discusspov.1.00,PARTO_1f_friend_understand.1.00,PARTO_1g_friend_accept.1.00,PARTO_1i_friend_alone.1.00,PARTO_1k_friend_talk.1.00,PARTO_1l_friend_concern.1.00,PARTO_1n_friend_counton.1.00,PARTO_1o_friend_trust.1.00,PARTO_1r_friend_problems.1.00)))
+
+#Composite for friendship quality year 4 
+data <- data %>%  mutate(friendship_quality_comp_yr4=rowMeans(data.frame(PARTO_1a_friend_pov.4.00,PARTO_1b_friend_upset.4.00,PARTO_1c_friend_discusspov.4.00,PARTO_1f_friend_understand.4.00,PARTO_1g_friend_accept.4.00,PARTO_1i_friend_alone.4.00,PARTO_1k_friend_talk.4.00,PARTO_1l_friend_concern.4.00,PARTO_1n_friend_counton.4.00,PARTO_1o_friend_trust.4.00,PARTO_1r_friend_problems.4.00)))
+
+#Composite for social ties
+data <- data %>% 
+  mutate(social_ties_comp_yr1=rowMeans(data.frame(PARTM_2d_school_socialties.1.00,PARTM_2e_school_satisfied.1.00,PARTM_2k_school_friends.1.00)))
+
+data <- data %>% 
+  mutate(social_ties_comp_yr4=rowMeans(data.frame(PARTM_2d_school_socialties.4.00,PARTM_2e_school_satisfied.4.00,PARTM_2k_school_friends.4.00)))
+
+#Composite for technology use during week in year 1
+data <- data %>% 
+  mutate( Tech_Use_Day_Comp_yr1= rowMeans(data.frame(PARTJ_1a_tech_day_social.1.00, PARTJ_1b_tech_day_porn.1.00, PARTJ_1c_tech_day_gambling.1.00, PARTJ_1d_tech_day_TV.1.00, PARTJ_1e_tech_day_internet.1.00, PARTJ_1f_tech_day_internetschool.1.00)))
+#Composite for technology use during week in year 4
+data <- data %>% 
+  mutate( Tech_Use_Day_Comp_yr4= rowMeans(data.frame(PARTJ_1a_tech_day_social.4.00, PARTJ_1b_tech_day_porn.4.00, PARTJ_1c_tech_day_gambling.4.00, PARTJ_1d_tech_day_TV.4.00, PARTJ_1e_tech_day_internet.4.00, PARTJ_1f_tech_day_internetschool.4.00)))
+#Composite for technology use on the weekend in year 1
+data <- data %>% 
+  mutate( Tech_Use_Weekend_Comp_yr1= rowMeans(data.frame(PARTJ_2a_tech_wkend_social.1.00, PARTJ_2b_tech_wkend_porn.1.00, PARTJ_2c_tech_wkend_gambling.1.00, PARTJ_2d_tech_wkend_TV.1.00, PARTJ_2e_tech_wkend_internet.1.00, PARTJ_2f_tech_wkend_internetschool.1.00)))
+#Composite for technology use on the weekend in year 4
+data <- data %>% 
+  mutate( Tech_Use_Weekend_Comp_yr4= rowMeans(data.frame(PARTJ_2a_tech_wkend_social.4.00, PARTJ_2b_tech_wkend_porn.4.00, PARTJ_2c_tech_wkend_gambling.4.00, PARTJ_2d_tech_wkend_TV.4.00, PARTJ_2e_tech_wkend_internet.4.00, PARTJ_2f_tech_wkend_internetschool.4.00)))
+#Composite for Video game use in year 1
+data <- data %>% 
+  mutate( Video_Game_Comp_yr1= rowMeans(data.frame(PARTJ_4a_vgames_strategy.1.00, PARTJ_4b_vgames_sports.1.00, PARTJ_4c_vgames_roleplaying.1.00, PARTJ_4d_vgames_model.1.00, PARTJ_4e_vgames_fps.1.00, PARTJ_4f_vgames_puzzles.1.00, PARTJ_4g_vgames_action.1.00, PARTJ_4h_vgames_racing.1.00, PARTJ_4i_vgames_fighting.1.00, PARTJ_4j_vgames_adventure.1.00, PARTJ_4k_vgames_artdesign.1.00, PARTJ_4l_vgames_quiz.1.00)))
+#Composite for Video game use in year 4
+data <- data %>% 
+  mutate( Video_Game_Comp_yr4= rowMeans(data.frame(PARTJ_4a_vgames_strategy.4.00, PARTJ_4b_vgames_sports.4.00, PARTJ_4c_vgames_roleplaying.4.00, PARTJ_4d_vgames_model.4.00, PARTJ_4e_vgames_fps.4.00, PARTJ_4f_vgames_puzzles.4.00, PARTJ_4g_vgames_action.4.00, PARTJ_4h_vgames_racing.4.00, PARTJ_4i_vgames_fighting.4.00, PARTJ_4j_vgames_adventure.4.00, PARTJ_4k_vgames_artdesign.4.00, PARTJ_4l_vgames_quiz.4.00)))
+#Composite for overall technology use across all categories in year 1
+data <- data %>% 
+  mutate( Tech_Use_Ovr_Comp_yr1= rowMeans(data.frame(Tech_Use_Day_Comp_yr1, Tech_Use_Weekend_Comp_yr1, Video_Game_Comp_yr1, PARTJ_3_tech_cellphone.1.00)))
+#Composite for overall all technology use across all categories in year 4
+data <- data %>% 
+  mutate( Tech_Use_Ovr_Comp_yr4= rowMeans(data.frame(Tech_Use_Day_Comp_yr4, Tech_Use_Weekend_Comp_yr4, Video_Game_Comp_yr4, PARTJ_3_tech_cellphone.4.00)))
+
+#Predictors
+library(sjPlot)
+
+lm(social_anxiety_comp_yr4~           #outcome variable
+     esteem_comp_yr1    +         # predictor 1
+     friendship_quality_comp_yr1   +         # predictor 2
+     social_ties_comp_yr1 +         # predictor 3
+    Tech_Use_Ovr_Comp_yr1 +
+     PARTA_2_sex +
+     PARTA_3__livingsituation.1.00 +
+    social_anxiety_comp_yr1  ,         # controlling for previous score on outcome variable
+   data = data) %>% # data = dataset that you are using
+  tab_model(show.std = TRUE, show.est = FALSE, show.ci = FALSE, show.intercept = FALSE)
+
+#Graph
+library(ggstatsplot)
+library(RColorBrewer)
+
+#Social Ties at year 1 predicting y4 social anxiety
+ggscatterstats(data = data,                                                                  
+               x = social_ties_comp_yr1,                                                                   
+               y = social_anxiety_comp_yr4,                                                                    
+               title = "Social Ties at year 1 predicting Social Anxiety at year 4",                                                              
+               xlab = "Social ties at year 1",                                                               
+               ylab = "Social anxiety at year 4",                                                               
+               ggtheme = theme_classic(),                                               
+               smooth.line.args = list(color = "blue", method = "lm", formula = y ~ x), 
+               messages = FALSE,                                                       
+               results.subtitle = FALSE,                                                
+               marginal= FALSE) +                                                       
+  theme(plot.title = element_text(hjust = 0.5))    
+
+#Self esteem at year 1 predicting y4 social anxiety
+ggscatterstats(data = data,                                                                 
+               x = esteem_comp_yr1,                                                                    
+               y = social_anxiety_comp_yr4,                                                                    
+               title = "Self esteem at year 1 predicting Social Anxiety at year 4",                                                              
+               xlab = "Self esteem at year 1",                                                              
+               ylab = "Social anxiety at year 4",                                                              
+               ggtheme = theme_classic(),                                               
+               smooth.line.args = list(color = "green", method = "lm", formula = y ~ x), 
+               messages = FALSE,                                                       
+               results.subtitle = FALSE,                                                
+               marginal= FALSE) +                                                       
+  theme(plot.title = element_text(hjust = 0.5))   
+
+#Overall tech use at year 1 predicting y4 social anxiety
+ggscatterstats(data = data,                                                                 
+               x = Tech_Use_Ovr_Comp_yr1,                                                                    
+               y = social_anxiety_comp_yr4,                                                                    
+               title = "Overall Technology Use at year 1 predicting Social Anxiety at year 4",                                                              # title of plot
+               xlab = "Overall Technology Use at year 1",                                                             
+               ylab = "Social anxiety at year 4",                                                              
+               ggtheme = theme_classic(),                                               
+               smooth.line.args = list(color = "red", method = "lm", formula = y ~ x), 
+               messages = FALSE,                                                        
+               results.subtitle = FALSE,                                                
+               marginal= FALSE) +                                                       
+  theme(plot.title = element_text(hjust = 0.5))  
+
+#Social anxiety at year 1 predicting y4 social anxiety
+ggscatterstats(data = data,                                                                 
+               x = social_anxiety_comp_yr1,                                                                    
+               y = social_anxiety_comp_yr4,                                                                    
+               title = "Social Anxiety at year 1 predicting Social Anxiety at year 4",                                                              
+               xlab = "Social anxiety at year 1",                                                              
+               ylab = "Social anxiety at year 4",                                                              
+               ggtheme = theme_classic(),                                               
+               smooth.line.args = list(color = "orange", method = "lm", formula = y ~ x), 
+               messages = FALSE,                                                       
+               results.subtitle = FALSE,                                                
+               marginal= FALSE) +                                                       
+  theme(plot.title = element_text(hjust = 0.5))  
+
+library(rstatix)
+(data_long <- data %>%
+    select(PART_ID, social_anxiety_comp_yr1,social_anxiety_comp_yr4) %>%                          
+    pivot_longer(cols = c(social_anxiety_comp_yr1,social_anxiety_comp_yr4),              
+                 names_to = "time",       
+                 values_to = "freq") %>%
+    convert_as_factor(PART_ID, time)) 
+
+ggbetweenstats(data = data_long,                                    
+               x = time,                                      
+               y = freq,                                       
+               messages = FALSE, results.subtitle = FALSE, 
+               title = "Social Anxiety Over Time",                                 
+               ylab = "Social Anxiety Score",                                 
+               xlab = "Time",                                   
+               ggtheme = ggstatsplot::theme_ggstatsplot(), 
+               package = "RColorBrewer",                   
+               palette = "Dark2") +                            
+  theme(plot.title = element_text(hjust = 0.5)) +          
+  scale_x_discrete(labels = c("Year 1", "Year 4")) 
+
+ 
